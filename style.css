@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bari-container {
+    border: 2px solid rgb(150, 99, 197);
+    border-radius: 8px;
+    display: flex;
+    max-width: 210px;
+    width: 100%;
+    padding: 0px 0px;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.X-Turn,
+.O-Turn {
+    border: 2px solid #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.active {
+    background-color: rgb(165, 121, 206);
+    color: #fff;
+}
+
+.gamepad {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    margin-top: 100px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.cell {
+    border: 1px solid rgb(165, 121, 206);
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-size: 50px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n) {
+    border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+    border-left: none;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.cell.X {
+    color: rgb(0, 162, 255);
+}
+
+.cell.O {
+    color: rgb(240, 22, 69);
+}
+
+.win {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.inactive {
+    display: none;
+}
+
+.win h1 {
+    margin-left: 50px;
+    font-size: 40px;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .win {
+        flex-wrap: wrap;
+    }
+
+    .win h1 {
+        margin-left: 0;
+        margin-top: -250px;
+    }
+    .win img {
+        vertical-align: middle;
+        margin-bottom: -100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .win h1 {
+        font-size: 30px;
+    }
+}
