@@ -18,6 +18,7 @@ let result = document.querySelector('.win');
 let resultText = document.querySelector('.win h1');
 let aud = new Audio('ting.mp3');
 let newAud = new Audio('music.mp3');
+let resetBtn = document.getElementById('resetBtn');
 
 cell.forEach(currElem => {
     currElem.addEventListener('click', () => {
@@ -62,3 +63,7 @@ function addInCell(currElem, currentPlayer) {
     aud.play();
     currElem.classList.add(currentPlayer);
 }
+
+resetBtn.addEventListener('click',()=>{
+    location.reload();
+});
